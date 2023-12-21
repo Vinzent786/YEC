@@ -1,0 +1,9 @@
+Finish nav functionality:
+    Change li drop down display on click
+
+Appointment Scheduling:
+    Needs to be able to notify via email & FB message
+
+Add meta description
+
+File versions for cache control

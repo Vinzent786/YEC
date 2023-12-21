@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Youngstown Event Center - Weddings, Birthdays, Repass</title>
+    <link rel="stylesheet" href="styles/master.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Righteous&display=swap" rel="stylesheet">
+    <script src="javascript/nav.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+   <nav>
+    <p id="nav-left"><a href="index.html">Youngstown Event Center</a></p>
+    <ul id="nav-list">
+        <li>HOME</li>
+        <li>BUILD YOUR EVENT</li>
+        <li>CATERING</li>
+        <li>
+            <div id="more-arrow-wrapper">
+                <p>MORE</p> 
+                <img id="down-arrow" src="/assets/icons/down-arrow-white.png" alt="Down Arrow">
+            </div>
+            <ul id="nav-drop-down" class="hidden">
+                <li>DECOR</li>
+                <li>UPCOMING EVENTS</li>
+            </ul>
+        </li>
+    </ul>
+   </nav>
+
+   <div class="content-wrapper">
+    <div class="no-footer-wrapper">
+        <div id="intro">
+            <img src="assets/page-images/pimg0.webp" alt="Youngstown Event Center">
+            <div>
+                <p>MODERN, EXCLUSIVE, YOUR HIDDEN GEM.</p>
+                <a href="tel:3307074636">(330) 707-4636</a>
+            </div>
+        </div>
+        <section> 
+            <h1>ABOUT US</h1>
+            <div id="about-us-grid">
+                <article id="article1">
+                    <h2>The Room of Prestige!</h2>
+                    <div><p>Come and let your imagination free by creating the experience YOU desire!</p></div>
+                </article>
+                <article id="article2">
+                    <h2>This is the place for YOU!</h2>
+                    <div><p>Have the VIP experience for your guest with convenient secure parking!</p></div>
+                </article>
+                <article id="article3">
+                    <h2>We would LOVE to host YOU!</h2>
+                    <div><p>Host your next VIP event HERE!</p></div>
+                </article>
+                <article id="article4">
+                    <h2>Added Prep Area!</h2>
+                    <div><p>Prepare for Your Exclusive Party!</p></div>
+                </article>
+            </div>
+            <!-- This script is for small screen grid layout -->
+            <script defer>
+                const formatSmallGrid = () => {
+                    const pTags = $('#about-us-grid article p');
+                    for (const p of pTags) {
+                        $(p).unwrap().after('<div></div>');
+                    }
+                }
+
+                const formatBigGrid = () => {
+                    const articles = $('#about-us-grid > article');
+                    articles.each(function() {
+                        const pEl = $(this).find('p');
+                        const divEl = $(this).find('div');
+                        pEl.appendTo(divEl);
+                    });
+                }
+
+                // This function checks wether the format grid functions are needed
+                // i.e if screen is small, but already has the small format or vise versa or
+                // if screen goes from small to big or big to small
+                const checkSize = () => {
+                    if ($(window).width() <= 750) {
+                        const siblingPs = $('#about-us-grid article div').filter(function() {
+                            return $(this).siblings('p').length;
+                        });
+                        if (siblingPs.length === 0) formatSmallGrid();
+                    } else {
+                        const childPs = $('#about-us-grid article div:has(> p)');
+                        if (childPs.length === 0) formatBigGrid();
+                    }
+                }
+
+                $(document).ready(() => {
+                    checkSize();
+                    $(window).on('resize', () => checkSize());
+                });
+            </script>
+        </section>
+    </div>
+    <footer></footer>
+   </div>
 </body>
 </html>

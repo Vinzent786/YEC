@@ -1,0 +1,122 @@
+:root {
+    --text-color: rgb(233, 228, 228);
+    --html-background: linear-gradient(to bottom left, #081218, #000000 95%);
+    --nav-background: #0d181f;
+    --josefinsans: 'Josefin Sans', sans-serif;
+    --righteous: 'Righteous', sans-serif;
+}
+
+html, body {
+    background: var(--html-background) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAV */
+
+nav {
+    background-color: var(--nav-background);
+    min-height: fit-content;
+    max-height: 10rem;
+    position: fixed;
+    width: 100vw;
+    inset: 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    z-index: 999;
+}
+
+#nav-left {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    width: fit-content;
+    text-align: center;
+    margin-left: 2rem;
+    font-family: var(--josefinsans);
+}
+
+#nav-left a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+p.nav-left:hover {cursor: pointer;}
+
+#nav-list {
+    list-style-type: none;
+    color: var(--text-color);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+    float: right;
+    margin-right: 4rem;
+    font-size: 1rem;
+    font-family: var(--josefinsans);
+}
+
+#more-arrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#nav-list li:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+nav #down-arrow {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+}
+
+#nav-drop-down {
+    list-style-type: none;
+    padding-inline-start: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--nav-background);
+    padding: 1rem;
+    transform: translateX(-2rem);
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 150ms, visibility 150ms;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rotate180 {animation: rotate180 300ms forwards;}
+
+.rotateBack {animation: rotateBack 300ms forwards;}
+
+@keyframes rotate180 {
+    100% {transform: rotate(180deg);}
+}
+
+@keyframes rotateBack {
+    0% {transform: translate(180deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/* END NAV */
+
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Righteous', sans-serif; */
