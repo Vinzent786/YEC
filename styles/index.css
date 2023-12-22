@@ -201,87 +201,95 @@ h1 {
 #mobile-about-us-grid {
     color: var(--text-color);
     display: grid;
-    /* gap: 8rem; */
+    gap: 5rem;
     grid-template-columns: 1fr;
     width: 100vw;
+    margin-top: 5rem;
 }
 
 #mobile-about-us-grid article {
     display: grid;
+    column-gap: 2rem;
     text-align: center;
-    background-color: #090913;
+    /* background-color: #090913; */
     /* outline: 1px solid white ; */
     padding: 0 2rem;
 }
 
+#mobile-about-us-grid h2 {
+    font-family: var(--righteous);
+    font-size: 2rem;
+}
+
+#mobile-about-us-grid p {
+    font-family: var(--josefinsans);
+    font-size: 1.2rem;
+}
+
 #mobile-about-us-grid article:nth-child(odd) {
     grid-template-areas: 
-    "img h2"
-    "img p";
+    "img info"
+    "img info";
 }
 
 #mobile-about-us-grid article:nth-child(even) {
     grid-template-areas: 
-    "h2 img"
-    "p img";
+    "info img"
+    "info img";
 }
 
-#mobile-about-us-grid article:nth-child(odd) > h2 {
-    grid-area: h2;
+#mobile-about-us-grid .info-div {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#mobile-about-us-grid article:nth-child(odd) > p {
-    grid-area: p;
-}
-
-#mobile-about-us-grid article:nth-child(odd) > div {
+#mobile-about-us-grid .grid-img {
     grid-area: img;
+    height: 20rem;
+    width: 20rem;
+}
+
+#mobile-about-us-grid > article:nth-child(odd) > .grid-img {
     border-radius: 1rem;
 }
 
-#mobile-about-us-grid article:nth-child(even) > h2 {
-    grid-area: h2;
-}
-
-#mobile-about-us-grid article:nth-child(even) > p {
-    grid-area: p;
-}
-
-#mobile-about-us-grid article:nth-child(even) > div {
-    grid-area: img;
+#mobile-about-us-grid > article:nth-child(even) > .grid-img {
     border-radius: 100%;
 }
 
-#mobile-about-us-grid div {
+.grid-img {
     width: 15rem;
     aspect-ratio: 1 / 1;
 }
 
-#mobile-article1 div {
+#mobile-article1 .grid-img {
     background: url(../assets/page-images/pimg4.webp) no-repeat;
     background-size: cover;
 }
 
-#mobile-article2 div {
+#mobile-article2 .grid-img {
     background: url(../assets/page-images/pimg1.webp) no-repeat;
     background-size: cover;
 }
 
-#mobile-article3 div {
+#mobile-article3 .grid-img {
     background: url(../assets/page-images/pimg2.webp) no-repeat;
     background-size: cover;
 }
 
-#mobile-article4 div {
+#mobile-article4 .grid-img {
     background: url(../assets/page-images/pimg3.webp) no-repeat;
     background-size: cover;
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
     #mobile-about-us-grid p {
         width: 15rem;
         margin: auto;
     }
-}
+} */
 
 /* End Mobile About Us */
