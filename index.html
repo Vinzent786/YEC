@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="referrer" content="no-referrer">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youngstown Event Center - Weddings, Birthdays, Repass</title>
@@ -10,9 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Righteous&display=swap" rel="stylesheet">
     <script src="javascript/nav.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <!-- I wrote this script to determine how the about us grid is built based on screen size -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/6.2.5/simplebar.min.js" integrity="sha512-HV1U44HR4mYVDcsxzJpghYyGEy2PvbePe9UFXlV3vnzf4yFhbKA9QNpnhy4VWwnaC2jKzijITVWHPZBCOuc51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="javascript/aboutUsGrid.js" defer></script>
+    <script src="javascript/hours.js" defer></script>
+    <script src="javascript/gallery.js"></script>
 </head>
 <body>
    <nav>
@@ -21,7 +24,7 @@
         <li>HOME</li>
         <li>BUILD YOUR EVENT</li>
         <li>CATERING</li>
-        <li>
+        <li id="more-container">
             <div id="more-arrow-wrapper">
                 <p>MORE</p> 
                 <img id="down-arrow" src="/assets/icons/down-arrow-white.png" alt="Down Arrow">
@@ -44,9 +47,125 @@
         </div>
         <section id="about-us"> 
             <h1>ABOUT US</h1>
+            <!-- The about us grid is built dynamically in aboutUsGrid.js, based on screen size -->
         </section>
+        <main>
+            <h3 id="h3">CONTACT US OR CALL (330) 707-4636</h3>
+            <div id="form-container">
+                <form action="">
+                    <fieldset id="name-fieldset">
+                        <legend>Drop us a message!</legend>
+                        <input type="text" name="name" id="name" autocomplete="name" placeholder="Full Name">
+                        <input type="email" name="email" id="email" autocomplete="email" placeholder="Email">
+                        <input type="text" name="phone_num" id="phone-num" autocomplete="tel" placeholder="Phone Number e.g. 123-456-7890">
+                        <textarea name="message" id="message" cols="30" rows="5" placeholder="Message"></textarea>
+                    </fieldset>
+                    <button id="submit">SEND</button>
+                </form>
+                <div id="info-grid">
+                        <article>
+                            <h4>We appreciate our customers, so feel free to schedule a visit!</h4>
+                            <p>See us in person! Office Hours 9am-11am or 4pm-7pm Monday- Friday; Saturday 10am-1pm</p>
+                        </article>
+                        <article>
+                            <h4>Youngstown Event Center</h4>
+                            <p>
+                                <address>12 East Dewey Avenue, Youngstown, Ohio 44507, United States</address>
+                                <a href="tel:3307074636">(330) 707-4636</a>
+                            </p>
+                        </article>
+                        <article>
+                            <div id="hours-h4">
+                                <h4>Hours</h4>
+                                <img id="down-arrow" src="/assets/icons/down-arrow-white.png" alt="Down Arrow">
+                            </div>
+                            <p id="hoursP"></p>
+                            <ul id="hours-list">
+                                <li>Sun  09:00am - 01:00am</li>
+                                <li>Mon 09:00am - 01:00am</li>
+                                <li>Tue  09:00am - 01:00am</li>
+                                <li>Wed 09:00am - 01:00am</li>
+                                <li>Thu  09:00am - 01:00am</li>
+                                <li>Fri   09:00am - 01:00am</li>
+                                <li>Sat  09:00am - 01:00am</li>
+                            </ul>
+                        </article>
+                </div>
+            </div>
+            <iframe id="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.6582686420993!2d-80.65905232271274!3d41.07646191522183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8833e538c9a10787%3A0x8359d065783aafdc!2s12%20E%20Dewey%20Ave%2C%20Youngstown%2C%20OH%2044507!5e0!3m2!1sen!2sus!4v1703614364486!5m2!1sen!2sus" width="1300" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </main>
+        <div id="booking-container">
+            <header>Schedule a Showing</header>
+            <a href="https://calendly.com/yec-showings/30min" target="_blank">Book an appointment here!</a>
+        </div>
+        <div id="blog" fully-opened="false">
+            <div id="gallery">
+                <div id="left-arrow"></div>
+                <div id="right-arrow"></div>
+            </div>
+            <div id="blog-info">
+                <p id="date">Agust 4th, 2022</p>
+                <header>Choosing Your Venue</header>
+                <p id="blog-text">There are so many ways and times to celebrate. These have been such stressful times but also times to remember. As we’ve been in the event industry for over three years, we’ve seen many reasons to remember your loved ones&hellip;</p>
+                <button>Continue Reading</button>
+                <script defer>
+                    // This script handles showing more and showing less text for the blog 
+                    // along with making visual changes to the grid on large screens
+                    $(document).ready(() => {
+                        const blogButton = $('#blog button');
+                        blogButton.on('click', function() {
+                            switch (blogButton.text()) {
+                                case 'Continue Reading':
+                                    $('#blog-text').html(`
+                                        There are so many ways and times to celebrate. These have been such stressful times but also times to remember. As we’ve been in the event industry for over three years, we’ve seen many reasons to remember your loved ones. Reason to celebrate can be birthdays, baby showers, graduations and so much more. Let’s talk about the top three ways to pick a venue. 
+                                        </br></br>                            
+                                        1.)  Location: you probably have already searched to see what place is in the central location of where everyone can gather.  When planning your time schedule of your event always understand people may have to work and travel time meaning you’ll have late arrivals. Having your event in a central location will minimize those types of hiccups. 
+                                        </br></br>
+                                        Suggested Venue: <a href="https://youngstowneventcenter.com/">Youngstown Event Center</a>
+                                        </br></br>
+                                        2.)  Parking: this is always a plus to have a parking lot or even valet service. When choosing your venue if the venue doesn’t have parking look to see what’s nearby to assist to your need for parking such as local businesses or restaurants. If that is not available alternatives are valet services or shuttle services to help assist your guest with getting to and from their cars safely. 
+                                        </br></br>
+                                        Local Valet Service: <a href="https://kinglyhandwash.com/" target="_blank">Kingly Hand Wash</a>
+                                        </br></br>
+                                        3.)  Services and Amenities: this will help you choose the style of the event. Most event spaces offer catering services. When choosing your space you want to know the guest count that way you’ll be able to understand your food and beverage minimum. Also does your space include table, chairs, linen to help service your event. Another great plus would be Audio/ Visual to help bring out your special memories during your event. 
+                                        </br></br>
+                                        Again, Remember to celebrate one another and we hope this helps when choosing your venue to host your special event. Request more information or contact us at <a href="mailto:YougstownEventCenter@gmail.com">YougstownEventCenter@gmail.com</a>
+                                    `);
+                                    blogButton.text('Show Less');
+                                    $('#blog').attr('fully-opened', 'true');
+                                    if ($(window).width() > 1600) $('#blog').css('grid-template-columns', '1fr');
+                                    break;
+                                case 'Show Less':
+                                    $('#blog-text').html(`
+                                    There are so many ways and times to celebrate. These have been such stressful times but also times to remember. As we’ve been in the event industry for over three years, we’ve seen many reasons to remember your loved ones&hellip;
+                                    `);
+                                    blogButton.text('Continue Reading');
+                                    $('#blog').attr('fully-opened', 'false');
+                                    if ($(window).width() > 1600) $('#blog').css('grid-template-columns', 'repeat(2, 1fr)');
+                                    break;
+                                default:
+                                    break;
+                            }
+                        });
+                        $(window).on('resize', () => {
+                            if ($(window).width() > 1600 && $('#blog').attr('fully-opened') === "false") {
+                                $('#blog').css('grid-template-columns', 'repeat(2, 1fr)');
+                            } else if ($(window).width() <= 1600) {
+                                $('#blog').css('grid-template-columns', '1fr');
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
     </div>
-    <footer></footer>
+    <footer>
+        <div id="footer-info-container">
+            <p id="copyright">Copyright © 2023 Youngstown Event Center - All Rights Reserved.</p>
+            <img src="assets/icons/facebook-icon-1.png" alt="Facebook">
+            <a href="">TERMS AND CONDITIONS + PRIVACY POLICY</a>
+        </div>
+    </footer>
    </div>
 </body>
 </html>

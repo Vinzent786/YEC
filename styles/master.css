@@ -2,6 +2,8 @@
     --text-color: rgb(233, 228, 228);
     --html-background: linear-gradient(to bottom left, #081218, #000000 95%);
     --nav-background: #0d181f;
+    --deep-purple: #090913;
+    
     --josefinsans: 'Josefin Sans', sans-serif;
     --righteous: 'Righteous', sans-serif;
 }
@@ -14,7 +16,22 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
+
+/* Scroll Bar */
+
+/* WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: .7rem; 
+    background-color: #5a5a5a;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #929292; 
+  }
+
+/* End Scroll Bar */
 
 /* NAV */
 
@@ -37,6 +54,9 @@ nav {
     text-align: center;
     margin-left: 2rem;
     font-family: var(--josefinsans);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #nav-left a {
@@ -50,7 +70,7 @@ p.nav-left:hover {cursor: pointer;}
     list-style-type: none;
     color: var(--text-color);
     display: flex;
-    gap: 1rem;
+    /* gap: 1rem; */
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -61,15 +81,41 @@ p.nav-left:hover {cursor: pointer;}
     font-family: var(--josefinsans);
 }
 
+#nav-list > li {
+    padding: 1rem;
+    margin: 0;
+    border-radius: .3rem;
+}
+
+/* #nav-list > li:not(#more-container) {
+    border-radius: .3rem;
+} */
+
 #more-arrow-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .5rem;
+    border-radius: .3rem;
 }
 
-#nav-list li:hover {
+#more-container {
+    position: relative;
+    width: 6rem;
+    /* border-radius: .3rem .3rem 0 0; */
+}
+
+#more-arrow-wrapper > p {
+    margin: 0;
+}
+
+#nav-list > li:hover {
     cursor: pointer;
+    background-color: #162b38;
+    transition: background-color 250ms;
+}
+
+#nav-drop-down > li:hover {
     transform: scale(1.1);
 }
 
@@ -85,17 +131,32 @@ nav #down-arrow {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: var(--nav-background);
-    padding: 1rem;
-    transform: translateX(-2rem);
+    background-color: #162b38;
+    /* transform: translateX(-2rem); */
     text-align: center;
-    border-radius: 1rem;
+    border-radius: 0rem 0rem .3rem .3rem;
+    top: 95%;
+    left: 0%;
+    width: 100%;
+}
+
+#nav-drop-down > li:first-child {
+    margin-top: 1rem;
+}
+
+#nav-drop-down > li:last-child {
+    margin-bottom: 1rem;
+}
+
+#nav-drop-down > li {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .hidden {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 150ms, visibility 150ms;
+    transition: opacity 250ms;
 }
 
 .visible {
@@ -116,7 +177,75 @@ nav #down-arrow {
     100% {transform: rotate(0deg);}
 }
 
+@media screen and (max-width: 500px) {
+    #nav-left {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        grid-template-columns: 1fr;
+    }
+
+    #nav-left {
+        justify-self: center;
+        margin: 1.5rem 2rem .5rem;
+    }
+
+    #nav-list {
+        justify-self: center;
+        margin: 0;
+        margin-bottom: .9rem;
+    }
+}
+
 /* END NAV */
 
-/* font-family: 'Josefin Sans', sans-serif;
-font-family: 'Righteous', sans-serif; */
+/* Footer */
+
+footer {
+    background-color: var(--nav-background);
+}
+
+#footer-info-container {
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, 1fr);
+    max-width: 95%;
+    margin: auto;
+}
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 1 / 1;
+    font-family: var(--josefinsans);
+    font-size: .5;
+}
+
+#footer-info-container > img {
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    grid-area: 1 / 2 / span 2 / span 1;
+}
+
+#footer-info-container > a {
+    display: block;
+    justify-self: center;
+    align-self: center;
+    grid-area: 2 / 1;
+    text-decoration: none;
+    color: #4696b1;
+    font-family: var(--righteous);
+}
+
+#footer-info-container > a:hover {
+    color: #244c96;
+    transition: color 350ms;
+}
+
+/* End Footer */
