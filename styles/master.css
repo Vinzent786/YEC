@@ -3,7 +3,8 @@
     --html-background: linear-gradient(to bottom left, #081218, #000000 95%);
     --nav-background: #0d181f;
     --deep-purple: #090913;
-    
+    --a: #4696b1;
+    --a-hover: #244c96;
     --josefinsans: 'Josefin Sans', sans-serif;
     --righteous: 'Righteous', sans-serif;
 }
@@ -32,6 +33,15 @@ html, body {
   }
 
 /* End Scroll Bar */
+
+
+/* This class is used for keeping footer at bottom of page, 
+keeping it in flow of document, regardless of y scrolling */
+.content-wrapper {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    /* min-height set dynamically in nav.js */
+}
 
 /* NAV */
 
@@ -81,15 +91,17 @@ p.nav-left:hover {cursor: pointer;}
     font-family: var(--josefinsans);
 }
 
+
 #nav-list > li {
     padding: 1rem;
     margin: 0;
     border-radius: .3rem;
 }
 
-/* #nav-list > li:not(#more-container) {
-    border-radius: .3rem;
-} */
+#nav-list a {
+    text-decoration: none;
+    color: var(--text-color);
+}
 
 #more-arrow-wrapper {
     display: flex;
@@ -202,49 +214,230 @@ nav #down-arrow {
 
 /* END NAV */
 
+/* Form */
+
+/* Form Container*/
+
+#form-container {
+    color: var(--text-color);
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 4rem auto;
+    gap: 1rem;
+}
+
+/* form {
+    align-self: center;
+} */
+
+fieldset {
+    color: var(--text-color);
+    border: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+fieldset > legend {
+    font-size: 2rem;
+}
+
+fieldset > input, fieldset > textarea {
+    font-size: 1.5rem;
+    border: none;
+    border-radius: .3rem;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+#submit {
+    font-size: 1.8rem;
+    background-color: var(--deep-purple);
+    color: var(--text-color);
+    border: none;
+    padding: .5rem 0;
+    width: calc(100% - 1em);
+    border-radius: .5rem;
+    outline: 1px solid #ffffff;
+    font-family: var(--righteous);
+    display: block;
+    margin: auto;
+}
+
+#submit:hover {
+    cursor: pointer;
+    background-color: #0e0e1d;
+    transition: background-color 500ms;
+}
+
+#info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#hours-h4 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: fit-content;
+    gap: .5rem;
+}
+
+.clicked {
+    transform: rotate(180deg);
+    transition: transform 500ms;
+}
+
+#hours-h4:hover {
+    cursor: pointer;
+}
+
+article:last-child > h4 {
+    width: fit-content;
+}
+
+#form-container article > p, #form-container article > address {
+    font-size: 1.5rem;
+}
+
+#form-container a {
+    margin-top: .5rem;
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+article #down-arrow {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    align-self: center;
+}
+
+#hours-list {
+    padding-inline-start: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    font-size: 1.2rem;
+    font-family: var(--josefinsans);
+    display: none;
+}
+
+.fade-in {
+    animation: fade-in 300ms forwards;
+}
+
+.fade-out {
+    animation: fade-out 120ms forwards;
+}
+
+#hours-list > li {
+    white-space: pre;
+    list-style-type: none;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@media screen and (max-width: 700px) {
+    #form-container h4 {
+        font-size: 1.8rem;
+    }
+
+    #form-container {
+        width: 95vw;
+    }
+
+    #info-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #form-container article {
+        width: 90vw;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #form-container {
+        grid-template-columns: 1fr;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1600px) {
+    #info-grid > article:last-child {
+        grid-area: 2 / 1 / span 1 / span 2;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #form-container {
+        width: 100rem;
+    }
+}
+
+/* End Form Container */
+
+#google-maps {
+    width: 96vw;
+    display: block;
+    margin: auto;
+    border-radius: .7rem;
+}
+
 /* Footer */
 
 footer {
     background-color: var(--nav-background);
+    width: 100vw;
 }
 
 #footer-info-container {
     color: var(--text-color);
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
     max-width: 95%;
     margin: auto;
+    text-align: center;
 }
 
 #copyright {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: 1 / 1;
     font-family: var(--josefinsans);
     font-size: .5;
 }
 
-#footer-info-container > img {
-    width: 3rem;
-    aspect-ratio: 1 / 1;
-    margin: auto;
-    grid-area: 1 / 2 / span 2 / span 1;
-}
-
-#footer-info-container > a {
+#terms {
     display: block;
     justify-self: center;
     align-self: center;
-    grid-area: 2 / 1;
     text-decoration: none;
-    color: #4696b1;
+    color: var(--a);
     font-family: var(--righteous);
 }
 
-#footer-info-container > a:hover {
-    color: #244c96;
+#terms:hover {
+    color: var(--a-hover);
     transition: color 350ms;
 }
 

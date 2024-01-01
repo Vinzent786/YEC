@@ -1,7 +1,7 @@
 function buildMobileGrid() {
     const bigGrid = $('#about-us-grid');
-    if (bigGrid.length > 0) bigGrid.remove(); //If the bigger grid is made, then it gets removed
-    if ($('#mobile-about-us-grid').length > 0) return; //Returns out of function, so a duplicate grid isn't made
+    if (bigGrid.length > 0) bigGrid.remove(); // If the bigger grid is made, then it gets removed
+    if ($('#mobile-about-us-grid').length > 0) return; // Returns out of function, so a duplicate grid isn't made
     const mobileGrid = $('<div id="mobile-about-us-grid"></div>');
     mobileGrid.appendTo($('#about-us'));
     (() => {
@@ -41,8 +41,8 @@ function buildMobileGrid() {
 
 function buildBigGrid() {
     const mobileGrid = $('#mobile-about-us-grid');
-    if (mobileGrid.length > 0) mobileGrid.remove(); //If the smaller grid is made, then it gets removed
-    if ($('#about-us-grid').length > 0) return; //Returns out of function, so a duplicate grid isn't made
+    if (mobileGrid.length > 0) mobileGrid.remove(); // If the smaller grid is made, then it gets removed
+    if ($('#about-us-grid').length > 0) return; // Returns out of function, so a duplicate grid isn't made
     const bigGrid = $('<div id="about-us-grid"></div>');
     bigGrid.appendTo($('#about-us'));
     (() => {

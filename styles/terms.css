@@ -1,0 +1,20 @@
+/* TERMS */
+
+main {
+    position: absolute;
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;  
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100vw;
+}
+
+#terms-conditions > header, #privacy-policy > header {
+    font-size: 1.5rem;
+    font-family: var(--josefinsans);
+    text-align: center;
+}
+
+/* END TERMS */

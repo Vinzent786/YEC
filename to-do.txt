@@ -1,13 +1,7 @@
-Finish nav functionality:
-    Change li drop down display on click
-    Align down arrow better
-
-Look at storing images ni the cloud for gallery
-
 Appointment Scheduling:
     Needs to be able to notify via email & FB message
 
-    Add terms & conditions
+change click area for nav elements
 
 Add meta description
 

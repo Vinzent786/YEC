@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="referrer" content="no-referrer">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>Youngstown Event Center - Weddings, Birthdays, Repass</title>
     <link rel="stylesheet" href="styles/master.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Righteous&display=swap" rel="stylesheet">
-    <script src="javascript/nav.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/6.2.5/simplebar.min.js" integrity="sha512-HV1U44HR4mYVDcsxzJpghYyGEy2PvbePe9UFXlV3vnzf4yFhbKA9QNpnhy4VWwnaC2jKzijITVWHPZBCOuc51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="javascript/nav.js" defer></script>
     <script src="javascript/aboutUsGrid.js" defer></script>
     <script src="javascript/hours.js" defer></script>
     <script src="javascript/gallery.js"></script>
 </head>
 <body>
-   <nav>
-    <p id="nav-left"><a href="index.html">Youngstown Event Center</a></p>
-    <ul id="nav-list">
-        <li>HOME</li>
-        <li>BUILD YOUR EVENT</li>
-        <li>CATERING</li>
-        <li id="more-container">
-            <div id="more-arrow-wrapper">
-                <p>MORE</p> 
-                <img id="down-arrow" src="/assets/icons/down-arrow-white.png" alt="Down Arrow">
-            </div>
-            <ul id="nav-drop-down" class="hidden">
-                <li>DECOR</li>
-                <li>UPCOMING EVENTS</li>
-            </ul>
-        </li>
-    </ul>
-   </nav>
+    <nav>
+        <p id="nav-left"><a href="index.html">Youngstown Event Center</a></p>
+        <ul id="nav-list">
+            <li><a href="">HOME</a></li>
+            <li><a href="src/build-your-event.html">BUILD YOUR EVENT</a></li>
+            <li><a href="src/catering.html">CATERING</a></li>
+            <li id="more-container">
+                <div id="more-arrow-wrapper">
+                    <p>MORE</p> 
+                    <img id="down-arrow" src="/assets/icons/down-arrow-white.png" alt="Down Arrow">
+                </div>
+                <ul id="nav-drop-down" class="hidden">
+                    <li><a href="src/decor.html">DECOR</a></li>
+                    <li><a href="src/upcoming-events.html">UPCOMING EVENTS</a></li>
+                </ul>
+            </li>
+        </ul>
+       </nav>
    <div class="content-wrapper">
     <div class="no-footer-wrapper">
         <div id="intro">
@@ -158,12 +157,15 @@
                 </script>
             </div>
         </div>
+        <div id="fb-container">
+            <p>Follow Us on Facebook!</p>
+            <a href="https://www.facebook.com/YoungstownEventCenter/" target="_blank" id="fb"><img src="assets/icons/facebook-icon-1.png" alt="Facebook"></a>
+        </div>
     </div>
     <footer>
         <div id="footer-info-container">
             <p id="copyright">Copyright © 2023 Youngstown Event Center - All Rights Reserved.</p>
-            <img src="assets/icons/facebook-icon-1.png" alt="Facebook">
-            <a href="">TERMS AND CONDITIONS + PRIVACY POLICY</a>
+            <a href="/src/terms.html" id="terms">TERMS AND CONDITIONS + PRIVACY POLICY</a>
         </div>
     </footer>
    </div>

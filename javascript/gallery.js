@@ -34,10 +34,10 @@ const imgArray = [
 const createImg = (src, index) => {
     const img = $('<img>');
     img.attr({
-        'src' : `${src}`,
-        'id' : `${index}`,
-        'loading' : 'lazy',
-        'alt' : 'Gallery Image'
+        'src': `${src}`,
+        'id': `${index}`,
+        'loading': 'lazy',
+        'alt': 'Gallery Image'
     });
     return img;
 }
@@ -50,18 +50,18 @@ const removeImage = () => {
 const scrollImg = (direction) => {
     const gallery = $('#gallery');
     let img = $('#gallery > img')[0];
-    let currentID; //Current img id
-    let nextID; //Next img id
-    let nextSrc; //Next img src
+    let currentID; // Current img id
+    let nextID; // Next img id
+    let nextSrc; // Next img src
     switch (direction) {
         case 'first':
             gallery.append(createImg(imgArray[0], 0));
             break;
         case 'left':
             currentID = parseInt(img['id']);
-            if (currentID === imgArray.length - 1) { //Wraps around to beginning of array if at end
+            if (currentID === imgArray.length - 1) { // Wraps around to beginning of array if at end
                 removeImage();
-                //Giving the browser a cycle time to make any adjustments before adding the new img
+                // Giving the browser a cycle time to make any adjustments before adding the new img
                 setTimeout(() => gallery.append(createImg(imgArray[0], 0)));
                 break;
             }
@@ -72,9 +72,9 @@ const scrollImg = (direction) => {
             break;
         case 'right':
             currentID = parseInt(img['id']);
-            if (currentID === 0) { //Wraps around to end of array if at beginning
+            if (currentID === 0) { // Wraps around to end of array if at beginning
                 removeImage();
-                //Giving the browser a cycle time to make any adjustments before adding the new img
+                // Giving the browser a cycle time to make any adjustments before adding the new img
                 setTimeout(() => gallery.append(createImg(imgArray[imgArray.length - 1], imgArray.length - 1)));
                 break;
             }

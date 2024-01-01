@@ -1,0 +1,39 @@
+/* CATERING */
+
+main {
+    margin-top: 2rem;
+}
+
+#pdf-download {
+    background-color: transparent;
+    border: none;
+    color: var(--a);
+    display: block;
+    margin: 1rem auto;
+    font-family: sans-serif;
+}
+
+#pdf-download:hover {
+    color: var(--a-hover);
+    transition: color 350ms;
+}
+
+#menu {
+    width: 30rem;
+    aspect-ratio: 3 / 4;
+    margin: auto;
+    display: block;
+    border-radius: .3rem;
+}
+
+@media screen and (max-width: 550px) {
+    main {
+        margin-top: 0;
+    }
+
+    #menu {
+        width: 15rem;
+    }
+}
+
+/* END CATERING */
