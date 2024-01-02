@@ -31,10 +31,6 @@ const imgArray = [
     "https://i.imgur.com/0yPEPFO.jpg"
 ];
 
-const c = (x) => {
-    return console.log(x);
-}
-
 const createImg = (src, id) => {
     const img = $('<img>');
     img.attr({

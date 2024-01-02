@@ -1,8 +1,6 @@
 Appointment Scheduling:
     Needs to be able to notify via email & FB message
 
-change click area for nav elements
-
 Add meta description
 
 File versions for cache control
