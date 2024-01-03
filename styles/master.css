@@ -62,7 +62,7 @@ nav {
     font-size: 1.8rem;
     width: fit-content;
     text-align: center;
-    margin-left: 2rem;
+    margin-left: 32px;
     font-family: var(--josefinsans);
     display: flex;
     justify-content: center;
@@ -86,16 +86,16 @@ p.nav-left:hover {cursor: pointer;}
     flex-wrap: wrap;
     padding-inline-start: 0;
     float: right;
-    margin-right: 4rem;
+    margin-right: 64px;
     font-size: 1rem;
     font-family: var(--josefinsans);
 }
 
 
 #nav-list > li {
-    padding: 1rem;
+    padding: 16px;
     margin: 0;
-    border-radius: .3rem;
+    border-radius: 4.8px;
 }
 
 #nav-list a {
@@ -107,14 +107,13 @@ p.nav-left:hover {cursor: pointer;}
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
-    border-radius: .3rem;
+    gap: 8px;
+    border-radius: 4.8px;
 }
 
 #more-container {
     position: relative;
-    width: 6rem;
-    /* border-radius: .3rem .3rem 0 0; */
+    width: 96px;
 }
 
 #more-arrow-wrapper > p {
@@ -132,7 +131,7 @@ p.nav-left:hover {cursor: pointer;}
 }
 
 nav #down-arrow {
-    width: 1rem;
+    width: 16px;
     aspect-ratio: 1 / 1;
 }
 
@@ -142,7 +141,7 @@ nav #down-arrow {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px;
     background-color: #162b38;
     /* transform: translateX(-2rem); */
     text-align: center;
@@ -153,16 +152,16 @@ nav #down-arrow {
 }
 
 #nav-drop-down > li:first-child {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 #nav-drop-down > li:last-child {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 #nav-drop-down > li {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 .hidden {
@@ -202,13 +201,13 @@ nav #down-arrow {
 
     #nav-left {
         justify-self: center;
-        margin: 1.5rem 2rem .5rem;
+        margin: 24px 32px 8px;
     }
 
     #nav-list {
         justify-self: center;
         margin: 0;
-        margin-bottom: .9rem;
+        margin-bottom: 14.4px;
     }
 }
 
@@ -216,27 +215,21 @@ nav #down-arrow {
 
 /* Form */
 
-/* Form Container*/
-
 #form-container {
     color: var(--text-color);
     width: 90vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 4rem auto;
-    gap: 1rem;
+    margin: 64px auto;
+    gap: 16px;
 }
-
-/* form {
-    align-self: center;
-} */
 
 fieldset {
     color: var(--text-color);
     border: none;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 16px;
 }
 
 fieldset > legend {
@@ -246,7 +239,7 @@ fieldset > legend {
 fieldset > input, fieldset > textarea {
     font-size: 1.5rem;
     border: none;
-    border-radius: .3rem;
+    border-radius: 4.8px;
 }
 
 form textarea {
@@ -258,9 +251,9 @@ form textarea {
     background-color: var(--deep-purple);
     color: var(--text-color);
     border: none;
-    padding: .5rem 0;
+    padding: 8px 0;
     width: calc(100% - 1em);
-    border-radius: .5rem;
+    border-radius: 8px;
     outline: 1px solid #ffffff;
     font-family: var(--righteous);
     display: block;
@@ -276,7 +269,7 @@ form textarea {
 #info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 32px;
 }
 
 h4 {
@@ -288,7 +281,7 @@ h4 {
     display: grid;
     grid-template-columns: repeat(2, auto);
     width: fit-content;
-    gap: .5rem;
+    gap: 8px;
 }
 
 .clicked {
@@ -309,23 +302,23 @@ article:last-child > h4 {
 }
 
 #form-container a {
-    margin-top: .5rem;
+    margin-top: 8px;
     display: block;
     font-size: 1.5rem;
     color: var(--text-color);
 }
 
 article #down-arrow {
-    width: 1rem;
+    width: 16px;
     aspect-ratio: 1 / 1;
     align-self: center;
 }
 
 #hours-list {
-    padding-inline-start: .5rem;
+    padding-inline-start: 8px;
     display: flex;
     flex-direction: column;
-    gap: .8rem;
+    gap: 12.8px;
     font-size: 1.2rem;
     font-family: var(--josefinsans);
     display: none;
@@ -348,8 +341,8 @@ article #down-arrow {
     font-size: 1.5rem;
     font-family: var(--josefinsans);
     background-color: var(--deep-purple);
-    padding: 1rem;
-    border-radius: .5rem;
+    padding: 16px;
+    border-radius: 8px;
     display: none;
 }
 
@@ -400,7 +393,7 @@ article #down-arrow {
 @media screen and (max-width: 1100px) {
     #form-container {
         grid-template-columns: 1fr;
-        margin: 2rem auto;
+        margin: 32px auto;
     }
 }
 
@@ -412,17 +405,17 @@ article #down-arrow {
 
 @media screen and (min-width: 1600px) {
     #form-container {
-        width: 100rem;
+        width: 1600px;
     }
 }
 
-/* End Form Container */
+/* End Form */
 
 #google-maps {
     width: 96vw;
     display: block;
     margin: auto;
-    border-radius: .7rem;
+    border-radius: 11px;
 }
 
 /* Footer */

@@ -1,5 +1,5 @@
 main {
-    margin: 5rem auto 3rem;
+    margin: 80px auto 48px;
     color: var(--text-color);
 }
 
@@ -8,7 +8,7 @@ h1 {
     font-family: var(--righteous);
     font-weight: 100;
     width: fit-content;
-    margin: 0 auto 2rem;
+    margin: 0 auto 32px;
 }
 
 /* DECOR GRID */
@@ -17,17 +17,17 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     width: 70%;
-    column-gap: 1.5rem;
-    row-gap: 2rem;
-    margin: 3rem auto 0;
+    column-gap: 24px;
+    row-gap: 32px;
+    margin: 48px auto 0;
     justify-content: center;
 }
 
 #decor-grid > article {
     display: grid;
-    grid-template-columns: 19rem;
-    grid-template-rows: 1fr 3rem auto;
-    gap: .5rem;
+    grid-template-columns: 304px;
+    grid-template-rows: 1fr 48px auto;
+    gap: 8px;
     justify-self: center;
 }
 
@@ -60,7 +60,7 @@ h2 {
 #p-container {
     grid-area: 3 / 1;
     display: flex;
-    gap: 1rem;
+    gap: 16px;
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -75,14 +75,14 @@ h2 {
 
 @media screen and (max-width: 600px) {
     #decor-grid > article {
-        grid-template-columns: 17rem;
-        width: 18rem;
+        grid-template-columns: 272px;
+        width: 288px;
     }
 }
 
 @media screen and (max-width: 1000px) {
     main {
-        margin: 2rem auto;
+        margin: 32px auto;
     }
     
     #decor-grid {

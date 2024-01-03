@@ -5,7 +5,7 @@ main {
     color: var(--text-color);
     display: grid;
     grid-template-columns: 1fr;
-    gap: 4rem;  
+    gap: 64px;  
     top: 40%;
     transform: translateY(-50%);
     width: 100vw;

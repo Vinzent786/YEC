@@ -4,7 +4,7 @@
 
 #intro {
     width: 100vw;
-    margin: 0 auto 10rem;
+    margin: 0 auto 160px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background-color: var(--deep-purple);
@@ -42,7 +42,7 @@
 @media screen and (max-width: 1100px) {
     #intro {
         grid-template-columns: 1fr;
-        margin: 0 auto 5rem;
+        margin: 0 auto 80px;
         background-color: transparent;
     }
 }
@@ -60,7 +60,7 @@ h1 {
     font-family: var(--josefinsans);
     width: fit-content;
     font-size: 2.5rem;
-    margin: 0 auto 3rem;
+    margin: 0 auto 48px;
 }
 
 /* About Us */
@@ -69,14 +69,14 @@ h1 {
     color: var(--text-color);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    width: 50rem;
+    gap: 32px;
+    width: 800px;
     margin: auto;
 }
 
 #about-us-grid article {
     position: relative;
-    border-radius: 1rem;
+    border-radius: 16px;
     background-color: var(--nav-background);
     overflow: hidden;
     aspect-ratio: 1 / 1;
@@ -86,7 +86,7 @@ h1 {
     text-align: center;
     font-family: var(--righteous);
     width: fit-content;
-    margin: 1rem auto;
+    margin: 16px auto;
     font-weight: 100;
 }
 
@@ -95,11 +95,11 @@ h1 {
     height: 100%;
     outline: 1px solid #ffffff;
     position: relative;
-    padding-top: .1rem;
+    padding-top: 1.6px;
 }
 
 #about-us-grid article > div, article > div::before {
-    border-radius: 0px 0px 1rem 1rem;
+    border-radius: 0px 0px 16px 16px;
 }
 
 #about-us-grid article > div::before {
@@ -150,7 +150,7 @@ h1 {
     text-align: center;
     z-index: 2;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: 16px;
     font-family: var(--josefinsans);
 }
 
@@ -160,38 +160,38 @@ h1 {
 
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
     #about-us-grid {
-        grid-template-rows: repeat(2, 25rem);
-        gap: 1rem;
+        grid-template-rows: repeat(2, 400px);
+        gap: 16px;
     }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1600px) {
     #about-us-grid {
-        width: 60rem;
+        width: 960px;
     }
 }
 
 @media screen and (min-width: 1600px) and (max-width: 1800px) {
     #about-us-grid {
-        width: 95rem;
+        width: 1520px;
         grid-template-columns: repeat(4, 1fr);
-        gap: 2rem
+        gap: 32px
     }
 }
 
 @media screen and (min-width: 1800px) and (max-width: 2000px) {
     #about-us-grid {
-        width: 105rem;
+        width: 1680px;
         grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+        gap: 32px;
     }
 }
 
 @media screen and (min-width: 2000px) {
     #about-us-grid {
-        width: 120rem;
+        width: 1720px;
         grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+        gap: 24px;
     }
 }
 
@@ -202,15 +202,15 @@ h1 {
 #mobile-about-us-grid {
     color: var(--text-color);
     display: grid;
-    gap: 5rem;
+    gap: 80px;
     grid-template-columns: 1fr;
     width: 90vw;
-    margin: 5rem auto 0;
+    margin: 80px auto 0;
 }
 
 #mobile-about-us-grid article {
     display: grid;
-    column-gap: 2rem;
+    column-gap: 32px;
     text-align: center;
 }
 
@@ -247,12 +247,12 @@ h1 {
 #mobile-about-us-grid .grid-img {
     grid-area: img;
     height: auto;
-    width: 20rem;
+    width: 320px;
     margin: auto;
 }
 
 #mobile-about-us-grid > article:nth-child(odd) > .grid-img {
-    border-radius: 1rem;
+    border-radius: 16px;
 }
 
 #mobile-about-us-grid > article:nth-child(even) > .grid-img {
@@ -260,7 +260,7 @@ h1 {
 }
 
 .grid-img {
-    width: 15rem;
+    width: 240px;
     aspect-ratio: 1 / 1;
 }
 
@@ -286,14 +286,14 @@ h1 {
 
 @media screen and (max-width: 500px) {
     #mobile-about-us-grid .grid-img {
-        width: 15rem;
+        width: 240px;
     }
 }
 
 @media screen and (max-width: 700px) {
     #mobile-about-us-grid {
         width: 100vw;
-        gap: 2rem;
+        gap: 32px;
         margin-top: 0;
     }
 
@@ -302,11 +302,11 @@ h1 {
         grid-template-areas: 
         "info"
         "img";
-        gap: 1rem;
+        gap: 16px;
     }
 
     #mobile-about-us-grid article * {
-        padding: 0 1rem;
+        padding: 0 16px;
     }
 }
 
@@ -316,7 +316,7 @@ h3 {
     color: var(--text-color);
     font-size: 2.2rem;
     width: fit-content;
-    margin: 6rem auto 0;
+    margin: 96px auto 0;
     font-family: var(--righteous);
 }
 
@@ -332,9 +332,9 @@ h3 {
 #booking-container {
     background-color: var(--deep-purple);
     color: var(--text-color);
-    margin: 3rem auto;
+    margin: 48px auto;
     outline: 1px solid #ffffff;
-    padding: 1rem 0;
+    padding: 16px 0;
 }
 
 #booking-container > header {
@@ -351,7 +351,7 @@ h3 {
 #booking-container > a {
     display: block;
     width: fit-content;
-    margin: 2.5rem auto 1rem;
+    margin: 40px auto 16px;
     text-decoration: none;
     font-size: 1.5rem;
     color: var(--a);
@@ -383,17 +383,17 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 0 auto ;
-    padding: 2rem 0;
+    padding: 32px 0;
     outline: 1px solid #ffffff;
-    width: 60rem;
-    border-radius: 1rem;
+    width: 960px;
+    border-radius: 16px;
 }
 
 #blog > #gallery {
-    width: 20rem;
-    height: 20rem;
+    width: 320px;
+    height: 320px;
     margin: auto;
-    border-radius: 1rem;
+    border-radius: 16px;
     outline: 1px solid #000000;
     position: relative;
 }
@@ -401,13 +401,13 @@ h3 {
 #gallery > img {
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: 16px;
 }
 
 #left-arrow, #right-arrow {
-    width: 1.5rem;
-    height: 4rem;
-    border-radius: .2rem;
+    width: 24px;
+    height: 64px;
+    border-radius: 3.2px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -440,7 +440,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 32px;
 }
 
 #date {
@@ -475,7 +475,7 @@ h3 {
 
 #blog button {
     border: none;
-    border-radius: .5rem;
+    border-radius: 8px;
     background-color: transparent;
     color: var(--text-color);
     font-size: 1.2rem;
@@ -495,8 +495,8 @@ h3 {
     }
 
     #blog > #gallery {
-        width: 15rem;
-        height: 15rem;
+        width: 240px;
+        height: 240px;
     }
 }
 
@@ -511,7 +511,7 @@ h3 {
 @media screen and (min-width: 700px) and (max-width: 1600px) {
     #blog {
         grid-template-columns: 1fr;
-        width: 40rem;
+        width: 640px;
     }
 }
 
@@ -520,11 +520,11 @@ h3 {
 #fb-container {
     color: var(--text-color);
     display: flex;
-    gap: 1rem;
+    gap: 16px;
     justify-content: center;
     align-items: center;
     max-width: 90vw;
-    margin: 3rem auto;
+    margin: 48px auto;
 }
 
 #fb-container > p {

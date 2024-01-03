@@ -1,7 +1,7 @@
 /* CATERING */
 
 main {
-    margin-top: 2rem;
+    margin-top: 32px;
 }
 
 #pdf-download {
@@ -9,7 +9,7 @@ main {
     border: none;
     color: var(--a);
     display: block;
-    margin: 1rem auto;
+    margin: 16px auto;
     font-family: sans-serif;
 }
 
@@ -19,7 +19,7 @@ main {
 }
 
 #menu {
-    width: 30rem;
+    width: 480px;
     aspect-ratio: 3 / 4;
     margin: auto;
     display: block;
@@ -32,7 +32,7 @@ main {
     }
 
     #menu {
-        width: 15rem;
+        width: 240px;
     }
 }
 

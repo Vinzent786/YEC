@@ -7,10 +7,10 @@ main {
 #event-container {
     color: var(--text-color);
     display: grid;
-    gap: 2rem;
+    gap: 32px;
     grid-template-columns: repeat(2, 1fr);
-    width: 50rem;
-    height: 30rem;
+    width: 800px;
+    height: 480px;
     margin: auto;
 }
 
@@ -18,12 +18,12 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgb(49, 49, 49, .3);
-    border-radius: .5rem;
+    border-radius: 8px;
 }
 
 #event-img p {
     width: fit-content;
-    margin: 1rem auto;
+    margin: 16px auto;
     font-family: var(--josefinsans);
 }
 
