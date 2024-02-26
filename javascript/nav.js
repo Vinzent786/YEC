@@ -43,7 +43,6 @@ const showHideDecide = () => {
     dropDownHidden ? showDropDown() : hideDropDown();
 }
 
-//Test comment for Ryan
 $('#more-container').on('click', () => showHideDecide());
 
 // Hides drop if mouse leaves drop down 
